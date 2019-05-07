@@ -62,6 +62,7 @@ app.get('/weather',(req, res)=>{
             error:'You must enter correct address'
         })
     }
+    
     geocode(req.query.address,(error,{latitude, longitude, location} = {})=>{ //if we pass special char in address as ex only ! it will give error so we set default value
         if(error){
             return  res.send({
