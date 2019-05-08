@@ -6,7 +6,7 @@ const forecast= require('../src/utils/forecast')
 
 
 const app=express()//it doesnot take any argument instead we can use app for exploring the features
-
+const port = process.env.PORT || 3000
 //Define path for Express Config
 const publicDirectoryPath=path.join(__dirname, '../public')
 const viewsPath=path.join(__dirname,'../templates/views')
@@ -103,6 +103,6 @@ app.get('*',(req, res)=>{ // * is a wild card character it is placed at the last
 
 //to start up the server
 //process of starting server is asyn 
-app.listen(3000, ()=>{
-    console.log('Server is up on 3000')
+app.listen(port, ()=>{
+    console.log('Server is up on' + port)
 })
